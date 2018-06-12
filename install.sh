@@ -44,10 +44,16 @@ tmux kill-session -t __noop >/dev/null 2>&1 || true
 ###################
 # Powerline fonts #
 ###################
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts
+if [ -e "fonts" ]; then
+    cd fonts
+    git fetch
+    git pull
+else
+    git clone https://github.com/powerline/fonts.git --depth=1
+    cd fonts
+fi
+
 ./install.sh
 cd ..
-rm -rf fonts
 
 printf "OK: Completed\n"
