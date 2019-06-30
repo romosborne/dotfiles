@@ -56,4 +56,11 @@ fi
 ./install.sh
 cd ..
 
+#######
+# Vim #
+#######
+cd vim
+./install.sh
+cd ..
+
 printf "OK: Completed\n"
