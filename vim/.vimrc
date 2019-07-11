@@ -36,6 +36,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'hdima/python-syntax'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'fatih/vim-go'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -69,4 +70,4 @@ let g:molokai_original = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
-colorscheme Monokai
+colorscheme Dev_Delight
