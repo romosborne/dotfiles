@@ -13,10 +13,6 @@ if [ $(uname -s) = "Linux" ]; then
     curl wget git apt-transport-https ca-certificates build-essential software-properties-common unzip zsh
   ok
 
-  bot "Set default shell to zsh"
-  chsh -s $(which zsh)
-  ok
-
   bot "Now let's do the more awkward packages"
   for fullfilename in ./install/*.sh; do
     [ -e "$fullfilename" ] || continue
