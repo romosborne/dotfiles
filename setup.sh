@@ -10,7 +10,11 @@ if [ $(uname -s) = "Linux" ]; then
   bot "OK, time to install some general packages"
   sudo apt update -y
   sudo apt install -y \
-    curl wget git apt-transport-https ca-certificates build-essential software-properties-common unzip
+    curl wget git apt-transport-https ca-certificates build-essential software-properties-common unzip zsh
+  ok
+
+  bot "Set default shell to zsh"
+  chsh -s $(which zsh)
   ok
 
   bot "Now let's do the more awkward packages"
