@@ -73,6 +73,6 @@ if [ $(uname -s) = "Darwin" ]; then
   done < casks.txt
 fi
 
-. .zshrc
+. ~/.zshrc
 
 bot "OK!  Done!"
