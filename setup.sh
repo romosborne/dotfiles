@@ -71,7 +71,8 @@ if [ $(uname -s) = "Darwin" ]; then
       done_install "already installed"
     fi
   done < casks.txt
-
 fi
+
+. .zshrc
 
 bot "OK!  Done!"
