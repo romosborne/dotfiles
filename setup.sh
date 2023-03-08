@@ -34,5 +34,46 @@ if [ $(uname -s) = "Linux" ]; then
       done_install "already installed"
     fi
   done < brew.txt
+
+  bot "Now for the brew casks"
+  brew doctor
+  while IFS="" read -r p || [ -n "$p" ]
+  do
+    start_install "brew install --cask $p"
+    if ! brew list "$p" > /dev/null 2>&1; then
+      brew install --cask "$p"
+      done_install "done"
+    else 
+      done_install "already installed"
+    fi
+  done < brew.txt
 fi
 
+if [ $(uname -s) = "Darwin" ]; then
+  bot "Time for the brew packages"
+  brew doctor
+  while IFS="" read -r p || [ -n "$p" ]
+  do
+    start_install "brew install $p"
+    if ! brew list "$p" > /dev/null 2>&1; then
+      brew install "$p"
+      done_install "done"
+    else 
+      done_install "already installed"
+    fi
+  done < brew.txt
+
+  bot "Now for the brew casks"
+  brew doctor
+  while IFS="" read -r p || [ -n "$p" ]
+  do
+    start_install "brew install --cask $p"
+    if ! brew list "$p" > /dev/null 2>&1; then
+      brew install --cask "$p"
+      done_install "done"
+    else 
+      done_install "already installed"
+    fi
+  done < casks.txt
+
+fi
