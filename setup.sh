@@ -8,9 +8,9 @@ bot "Hey!"
 
 if [ $(uname -s) = "Linux" ]; then
   bot "OK, time to install some general packages"
-  #sudo apt update -y
-  #sudo apt install -y \
-  #  curl wget git apt-transport-https ca-certificates build-essential software-properties-common \
+  sudo apt update -y
+  sudo apt install -y \
+    curl wget git apt-transport-https ca-certificates build-essential software-properties-common
   ok
 
   bot "Now let's do the more awkward packages"
