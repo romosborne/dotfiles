@@ -4,7 +4,7 @@ if ! command -v docker > /dev/null; then
   curl -fsSL https://get.docker.com -o get-docker.sh
   sudo sh get-docker.sh
   rm get-docker.sh
-  sudo groupadd docker
+  getent group docker || sudo groupadd docker
   sudo usermod -aG docker $USER
   newgrp docker
   sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
