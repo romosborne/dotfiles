@@ -35,18 +35,14 @@ if [ $(uname -s) = "Linux" ]; then
     fi
   done < brew.txt
 
-  bot "Now for the brew casks"
-  brew doctor
-  while IFS="" read -r p || [ -n "$p" ]
-  do
-    start_install "brew install --cask $p"
-    if ! brew list "$p" > /dev/null 2>&1; then
-      brew install --cask "$p"
-      done_install "done"
-    else 
-      done_install "already installed"
-    fi
-  done < brew.txt
+  bot "Post install stuff"
+  for fullfilename in ./postinstall/*.sh; do
+    [ -e "$fullfilename" ] || continue
+    filename=$(basename -- "$fullfilename")
+    package="${filename%.*}"
+    action "installing ${package}"
+    . "$fullfilename"
+  done
 fi
 
 if [ $(uname -s) = "Darwin" ]; then
