@@ -73,3 +73,5 @@ if [ $(uname -s) = "Darwin" ]; then
   done < casks.txt
 
 fi
+
+bot "OK!  Done!"
