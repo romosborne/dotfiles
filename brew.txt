@@ -1,0 +1,6 @@
+zellij
+bat
+fzf
+httpie
+jq
+neovim
