@@ -4,3 +4,4 @@ fzf
 httpie
 jq
 neovim
+dotnet
