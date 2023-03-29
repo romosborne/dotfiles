@@ -9,14 +9,20 @@ else
   mkdir -p $font_dir
 fi
 
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip
-unzip FiraCode.zip -d $font_dir
-rm FiraCode.zip
+bot "Do you want me to install fonts?"
 
-# Reset font cache on Linux
-if command -v fc-cache @>/dev/null ; then
-    echo "Resetting font cache, this may take a moment..."
-    fc-cache -f $font_dir
+read -r -p "Install fonts?  [y|N] " response
+
+if [[ $response =~ (yes|y|Y) ]]; then
+  wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip
+  unzip FiraCode.zip -d $font_dir
+  rm FiraCode.zip
+
+  # Reset font cache on Linux
+  if command -v fc-cache @>/dev/null ; then
+      echo "Resetting font cache, this may take a moment..."
+      fc-cache -f $font_dir
+  fi
+
+  echo "All Powerline fonts installed to $font_dir"
 fi
-
-echo "All Powerline fonts installed to $font_dir"
