@@ -4,6 +4,5 @@ fzf
 httpie
 jq
 neovim
-dotnet
 tealdeer
 bottom

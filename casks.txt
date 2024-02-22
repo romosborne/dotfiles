@@ -1,5 +1,4 @@
 font-fira-mono-nerd-font
 rectangle
 iterm2
-docker
-visual-studio-code
+bruno
